@@ -1,13 +1,10 @@
 import tkinter as tk
-import tkinter.messagebox as messagebox
-import MySQLdb.cursors
-import re
-import mysql.connector
 from register import register_user
+from login import check_credentials
 
 root = tk.Tk()
 root.geometry("500x350")
-root.title("Conzens Zeiterfassung")
+root.title("Conzens Zeiterfassung Password123*")
 
 # Create a frame to hold the elements
 frame = tk.Frame(root)
@@ -25,7 +22,9 @@ password_label.pack()
 password_entry = tk.Entry(frame, show="*")
 password_entry.pack()
 
-login_button = tk.Button(frame, text="Login")
+login_button = tk.Button(frame, text="Login", command=lambda: check_credentials(username_entry.get(),
+                                                                                password_entry.get(),
+                                                                                root))
 register_button = tk.Button(frame, text="Register", command=register_user)
 login_button.pack()
 register_button.pack()
