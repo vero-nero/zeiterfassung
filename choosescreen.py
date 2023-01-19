@@ -10,7 +10,7 @@ def homescreen(loggeduser):
     frame = tk.Frame(root)
     frame.place(relx=0.5, rely=0.5, anchor="center")
 
-    login_button = tk.Button(frame, text="Zeiterfassung", command=zeiterfassung)
+    login_button = tk.Button(frame, text="Zeiterfassung", command=zeiterfassung(loggeduser))
     register_button = tk.Button(frame, text="Projekterstellung", command=projectscreen)
     login_button.pack()
     register_button.pack()
