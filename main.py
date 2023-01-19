@@ -1,6 +1,7 @@
 import tkinter as tk
 from register import register_user
 from login import check_credentials
+from choosescreen import homescreen
 
 root = tk.Tk()
 root.geometry("500x350")
@@ -22,7 +23,7 @@ password_label.pack()
 password_entry = tk.Entry(frame, show="*")
 password_entry.pack()
 
-login_button = tk.Button(frame, text="Login", command=lambda: check_credentials(username_entry.get(),
+login_button = tk.Button(frame, text="Login", command=lambda:check_credentials(username_entry.get(),
                                                                                 password_entry.get(),
                                                                                 root))
 register_button = tk.Button(frame, text="Register", command=register_user)

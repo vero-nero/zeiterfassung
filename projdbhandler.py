@@ -26,10 +26,16 @@ def saveproject(projnum, description, customer):
         # Password is invalid
         tk.messagebox.showerror("Error", "Projektcreation went wrong.")
 def getprojects():
+    connsting = MySQLdb.connect(
+        host='localhost',
+        user='root',
+        password='nine',
+        db='zeiterfassung',
+        charset='utf8mb4')
     cursor = connsting.cursor()
-    sql = "Select Projektnummer From Projekte"
+    sql = "SELECT Projektnummer FROM Projekte" #Select Projektnummer From Projekte
     cursor.execute(sql)
-    connsting.commit()
+    dbpass = cursor.fetchone()
     cursor.close()
     connsting.close()
-    #return sql
+    return dbpass
